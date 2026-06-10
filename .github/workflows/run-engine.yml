@@ -1,0 +1,22 @@
+name: Execute AI Logic Benchmark
+
+on:
+  workflow_dispatch: # Isse hum jab chahein button daba kar code run kar sakte hain
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch repository infrastructure
+        uses: actions/checkout@v4
+
+      - name: Setup Python environment core
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Deploy and execute logic simulation
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python benchmark.py
+        
