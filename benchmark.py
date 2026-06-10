@@ -18,8 +18,9 @@ def test_groq_ai_logic():
         "Authorization": f"Bearer {api_key}"
     }
     
+    # Yahan naya active model use kiya hai
     payload = {
-        "model": "llama3-8b-8192",
+        "model": "llama-3.1-8b-instant",
         "messages": [
             {
                 "role": "user",
@@ -36,7 +37,6 @@ def test_groq_ai_logic():
         
         result = json.loads(data)
         
-        # Checking if Groq sent an error message instead of results
         if 'error' in result:
             print("\n[!] SERVER RETURNED AN ERROR:")
             print(json.dumps(result['error'], indent=2))
