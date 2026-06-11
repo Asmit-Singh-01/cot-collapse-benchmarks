@@ -15,4 +15,3 @@ An empirical evaluation framework designed to stress-test and map the exact logi
 
 ---
 *Status: Architecture active. Core mathematical benchmarking scripts deploying next.*
-''
